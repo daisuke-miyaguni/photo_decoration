@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+
+    <script type="text/javascript" src="./js/camera.js"></script>
+
+    <title>カメラ撮影</title>
+
+    <link rel="stylesheet" href="./css/camera.css">
+
+</head>
+
+<body style="margin : 0px; overflow: hidden;">
+    <div class="preview">
+        <div id="bg"></div>
+        <canvas></canvas>
+        <a id="clean_btn"></a>
+        <a id="dl_btn"></a>
+        <div id="sticker_menu">
+            <table></table>
+        </div>
+    </div>
+
+    <video id="camera" autoplay muted playsinline>
+    </video>
+
+    <div id="dialog">
+        <div id="lang_select"></div>
+    </div>
+
+    <div id="btn">
+        <a id="change_btn"></a>
+        <a id="shot_btn"></a>
+    </div>
+
+    <div id="footer">
+        <a id="retry" glot-model="reshot"></a>
+    </div>
+</body>
+
+</html>

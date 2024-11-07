@@ -1,0 +1,397 @@
+@font-face {
+    font-family: 'Font Awesome Brands';
+    src: url('../fonts/fa-brands-400.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Font Awesome Regular';
+    src: url('../fonts/fa-regular-400.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Font Awesome Solid';
+    src: url('../fonts/fa-solid-900.woff2') format('woff2');
+}
+
+html,
+body,
+div {
+    touch-action: manipulation;
+    background-image: none;
+
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#camera {
+    display: block;
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    /* width: auto; */
+    height: auto;
+
+    background-color: white;
+}
+
+#camera.hidden {
+    display: none;
+}
+
+#btn {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 90px;
+    left: 0;
+    bottom: 10%;
+
+    background: none;
+    z-index: 100;
+
+    text-align: center;
+}
+
+#shot_btn {
+    display: inline-block;
+    position: relative;
+
+    margin: auto;
+
+    text-align: center;
+    line-height: 75px;
+
+    width: 75px;
+    height: 75px;
+    color: black;
+
+    border-radius: 60px;
+
+    background-color: white;
+}
+
+#shot_btn::before {
+    padding: 3px;
+
+    font-family: "Font Awesome Solid";
+    font-size: 45px;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 60px;
+
+    content: '\f111';
+}
+
+#change_btn {
+    display: inline-block;
+    position: absolute;
+
+    color: black;
+
+    left: 1em;
+
+    text-align: center;
+    line-height: 55px;
+
+    width: 55px;
+    height: 55px;
+
+    border-radius: 60px;
+
+    background-color: white;
+}
+
+#change_btn::before {
+    font-family: "Font Awesome Solid";
+
+    font-size: 35px;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+
+    border: none;
+
+    content: '\e0d8';
+}
+
+#btn.hidden {
+    z-index: 0;
+    background-color: #ffffffaa;
+}
+
+#btn.hidden #shot_btn,
+#btn.hidden #change_btn {
+    visibility: hidden;
+}
+
+.preview {
+    display: block;
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    max-width: 750px;
+    height: 100%;
+
+    margin: 0 auto;
+
+    z-index: 50;
+}
+
+.preview #bg {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-image: url(./../img/uinavi_ui_bg.webp);
+    background-color: #ffffff00;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.preview #sticker_menu {
+    display: flex;
+    position: fixed;
+    width: 300px;
+    height: 160px;
+    right: 0;
+    bottom: 80px;
+    background: none;
+    background-color: #ffffffaa;
+
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.preview #sticker_menu table {
+    display: table;
+    margin: auto;
+
+    box-sizing: border-box;
+
+    touch-action: manipulation;
+}
+
+.preview #sticker_menu table th {
+    background: none;
+    background-size: contain;
+
+    background-repeat: no-repeat;
+
+    border: none;
+    box-sizing: border-box;
+
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+
+    touch-action: manipulation;
+}
+
+.preview #sticker_menu table th.select {
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 10px;
+    border-color: gray;
+}
+
+
+.preview canvas {
+    display: flex;
+    position: relative;
+
+    width: auto;
+    height: 60%;
+
+    margin: 5px auto 0 auto;
+
+    touch-action: none;
+}
+
+.preview #dl_btn {
+    display: flex;
+    position: absolute;
+
+    width: 60px;
+    height: 60px;
+
+    bottom: 90px;
+    left: 15px;
+
+    border-radius: 60px;
+
+    background: none;
+    background-color: #ffffff;
+
+    z-index: 100;
+}
+
+.preview #dl_btn::before {
+    display: inline-flex;
+    margin: auto;
+    font-family: "Font Awesome Solid";
+    font-size: 40px;
+    color: gray;
+
+    content: '\f019';
+}
+
+.preview #clean_btn {
+    display: flex;
+    position: absolute;
+
+    width: 60px;
+    height: 60px;
+
+    bottom: 175px;
+    left: 15px;
+
+    border-radius: 60px;
+
+    background: none;
+    background-color: #ffffff;
+
+    z-index: 100;
+}
+
+.preview #clean_btn::before {
+    display: inline-flex;
+    margin: auto;
+    font-family: "Font Awesome Regular";
+    font-size: 40px;
+    color: gray;
+
+    content: '\f2ed';
+}
+
+.preview p {
+    position: relative;
+    margin: auto;
+}
+
+.preview.hidden {
+    display: none;
+    z-index: 0;
+}
+
+#footer {
+    position: fixed;
+    background-color: #000000aa;
+    width: 100%;
+    height: 70px;
+    bottom: 0;
+    left: 0;
+
+    z-index: 50;
+}
+
+#footer a {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 60px;
+    box-sizing: border-box;
+
+    text-decoration: none;
+}
+
+#swich {
+    font-family: "M PLUS Rounded 1c";
+    font-weight: bold;
+
+    width: 35%;
+    height: 50%;
+    left: 10%;
+    top: 25%;
+    color: white;
+    background-color: #ffffff00;
+
+    border-width: 3px;
+    border-style: solid;
+    border-color: #ffffff;
+
+    opacity: 0.5;
+}
+
+#swich::before {
+    font-family: "Font Awesome Solid";
+    font-weight: 900;
+
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+
+    content: '\f3e5';
+    margin-right: 5px;
+}
+
+#retry {
+    width: 35%;
+    height: 50%;
+    right: 10%;
+    top: 25%;
+
+    font-family: "M PLUS Rounded 1c";
+    font-weight: bold;
+
+    color: white;
+    background-color: gray;
+}
+
+#retry::before {
+    font-family: "Font Awesome Solid";
+    font-weight: 900;
+
+    font-style: normal;
+    font-variant: normal;
+
+    text-align: center;
+    text-rendering: auto;
+    content: '\f030';
+    margin-right: 5px;
+}
+
+#footer.hidden #swich {
+    opacity: 1;
+}
+
+#footer.hidden #retry {
+    opacity: 0.5;
+}
+
+.viewer {
+    position: fixed;
+    width: 100%;
+    height: 10%;
+    bottom: 0;
+    left: 0;
+}
+
+.viewer.hidden {
+    display: none;
+}
+
+.viewer a {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+}
